@@ -32,11 +32,11 @@ public class RentRecord {
 		int totalPrice = 0;
 		for(RecordEntry entry:RecordList) {
 			if(entry.customer.getID() == customer.getID()) {
-				System.out.println(entry.video.getMovieName()+ "\t" + entry.days + " 天");
+				System.out.println(entry.video.getMovieName()+ "\t" + entry.days + " 天" + "花費：" + entry.price + "美元");
 				totalPrice += entry.price;
 			}
 		}
-		System.out.println("總消費金額：" + totalPrice + " $");
+		System.out.println("總消費金額：" + totalPrice + " 美元");
 		System.out.println("常客積點總數：" + customer.getPoints());
 		System.out.println("===================\n");
 		
