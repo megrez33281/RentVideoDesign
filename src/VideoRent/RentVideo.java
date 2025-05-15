@@ -35,10 +35,10 @@ public class RentVideo {
 
 		
 		//查看顧客的租借紀錄
-		Ualn.statement(CustomerRentRecord);
-		SixFlower.statement(CustomerRentRecord);
-		Kon.statement(CustomerRentRecord);
-		SJY.statement(CustomerRentRecord);
+		Ualn.statement();
+		SixFlower.statement();
+		Kon.statement();
+		SJY.statement();
 		
 		//2個月後......
 		MyName.ChangeMovieType(new OldMovie());
