@@ -1,16 +1,20 @@
 package VideoRent;
 
 public class Customer {
-	private String CustomerID;
+
 	private String Name;
-	Customer(String CustomerID, String Name){
-		this.CustomerID = CustomerID;
+
+	Customer(String Name){
 		this.Name = Name;
+
 	}
 	public String getName() {
 		return Name;
 	}
-	public String getID() {
-		return CustomerID;
+	
+	public void statement(RentRecord rentRecords) {
+		rentRecords.printStatement(this);
 	}
+	
+
 }

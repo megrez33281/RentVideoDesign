@@ -2,15 +2,15 @@ package VideoRent.MovieTypes;
 
 public class ChildMovie implements MovieTypes {
 	
-	private int BasePrice = 2;
-	private int BaseDays = 5;
-	private int DelayPrice = 1;
+	private float BasePrice = (float)1.5;
+	private int BaseDays = 3;
+	private float DelayPrice = (float)1.5;
 	private float CustomerPoints = (float)0.5;
 	
 	public float CustomerPoint() {
 		return CustomerPoints;
 	}
-	public int RentPrice(int days) {
+	public float RentPrice(int days) {
 		return BasePrice + Math.max(0, days-BaseDays)*DelayPrice;
 	}
 

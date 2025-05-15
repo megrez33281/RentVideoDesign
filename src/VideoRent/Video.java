@@ -1,14 +1,12 @@
 package VideoRent;
 
 public class Video {
-	private String VideoID;
 	private Movie movie;
-	Video(String VideoID, Movie movie){
-		this.VideoID = VideoID;
+	Video(Movie movie){
 		this.movie = movie;
 	}
 
-	public int getPrice(int days) {
+	public float getPrice(int days) {
 		return movie.getMoviePrice(days);
 	}
 	public float getPoints() {

@@ -7,9 +7,9 @@ public class RentRecord {
 		public Customer customer;
 		public Video video;
 		public int days;
-		public int price;
+		public float price;
 		public float points;
-		RecordEntry(Customer customer, Video video, int days, int price, float points){
+		RecordEntry(Customer customer, Video video, int days, float price, float points){
 			this.customer = customer;
 			this.video = video;
 			this.days = days;
@@ -22,7 +22,7 @@ public class RentRecord {
 		RecordList = new ArrayList<RecordEntry>();
 	}	
 	public void rentVideo(Customer customer, Video video, int days) {
-		int price = video.getPrice(days);
+		float price = video.getPrice(days);
 		float points = video.getPoints();
 		RecordEntry entry = new RecordEntry(customer, video, days, price, points);
 		RecordList.add(entry);
@@ -33,8 +33,8 @@ public class RentRecord {
 		int totalPrice = 0;
 		float totalCustomerPoints = 0;
 		for(RecordEntry entry:RecordList) {
-			if(entry.customer.getID() == customer.getID()) {
-				System.out.println(entry.video.getMovieName()+ " " + entry.days + " 天 " + "花費：" + entry.price + "美元");
+			if(entry.customer.getName() == customer.getName()) {
+				System.out.println(entry.video.getMovieName()+ " " + entry.days + " 天 " + "花費：" + entry.price + "美元  " +  "獲得積點：" + entry.points );
 				totalPrice += entry.price;
 				totalCustomerPoints += entry.points;
 			}

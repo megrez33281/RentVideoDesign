@@ -6,11 +6,9 @@ import VideoRent.MovieTypes.OldMovie;
 import VideoRent.MovieTypes.ChildMovie;
 
 public class Movie {
-	private String MovieId;
 	private String Name;
 	private MovieTypes type;
-	Movie(String MovieId, String Name, MovieType type){
-		this.MovieId = MovieId;
+	Movie(String Name, MovieType type){
 		this.Name = Name;
 		if(type == MovieType.NEW) {
 			this.type = new NewMovie();
@@ -30,12 +28,17 @@ public class Movie {
 		return Name;
 	}
 	
-	public int getMoviePrice(int days) {
+	public float getMoviePrice(int days) {
 		return type.RentPrice(days);
 	}
 	
 	public float getCustomPoints() {
 		return type.CustomerPoint();
+	}
+	
+	public void ChangeMovieType(MovieTypes movieTypes) {
+		//更改影片種類(新片、舊片、兒童片)
+		this.type = movieTypes;
 	}
 	
 }
